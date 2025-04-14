@@ -1,4 +1,4 @@
-# Welcome to your Mental Health Healper
+# Welcome to your Mental Health Helper
 
 ## Project info
 
