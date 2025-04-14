@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project]([https://lovable.dev/projects/554541e9-3aa8-4d9b-ad46-f20e73237841](https://preview--chat-whisper-soul-check.lovable.app)) and start prompting.
+Simply visit the [Lovable Project](https://preview--chat-whisper-soul-check.lovable.app) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
