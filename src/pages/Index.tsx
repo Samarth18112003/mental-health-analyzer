@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -8,25 +7,28 @@ import EmotionChart from "@/components/EmotionChart";
 import MentalHealthReport from "@/components/MentalHealthReport";
 import { analyzeText } from "@/utils/textAnalyzer";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-
 const Index = () => {
   const [conversation, setConversation] = useState("");
   const [analyzing, setAnalyzing] = useState(false);
   const [results, setResults] = useState<null | {
-    emotions: { name: string; value: number }[];
-    report: { title: string; description: string; suggestions: string[] };
+    emotions: {
+      name: string;
+      value: number;
+    }[];
+    report: {
+      title: string;
+      description: string;
+      suggestions: string[];
+    };
   }>(null);
   const [error, setError] = useState("");
-
   const handleAnalyze = async () => {
     if (!conversation.trim()) {
       setError("Please enter a conversation to analyze");
       return;
     }
-
     setError("");
     setAnalyzing(true);
-    
     try {
       // Simulate API call with our local analyzer
       const analysisResults = await analyzeText(conversation);
@@ -38,9 +40,7 @@ const Index = () => {
       setAnalyzing(false);
     }
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 p-4 md:p-8">
+  return <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
         <header className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-blue-700 mb-2">Mental Health Analyzer</h1>
@@ -57,40 +57,23 @@ const Index = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Textarea 
-              placeholder="Paste your conversation here..." 
-              className="min-h-[200px] mb-4 focus:border-blue-400 resize-none"
-              value={conversation}
-              onChange={(e) => setConversation(e.target.value)}
-              disabled={analyzing}
-            />
-            {error && (
-              <Alert variant="destructive" className="mb-4">
+            <Textarea placeholder="Paste your conversation here..." className="min-h-[200px] mb-4 focus:border-blue-400 resize-none" value={conversation} onChange={e => setConversation(e.target.value)} disabled={analyzing} />
+            {error && <Alert variant="destructive" className="mb-4">
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>{error}</AlertDescription>
-              </Alert>
-            )}
+              </Alert>}
           </CardContent>
           <CardFooter>
-            <Button 
-              onClick={handleAnalyze} 
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-              disabled={analyzing}
-            >
-              {analyzing ? (
-                <>
+            <Button onClick={handleAnalyze} className="w-full bg-blue-600 hover:bg-blue-700 text-white" disabled={analyzing}>
+              {analyzing ? <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Analyzing...
-                </>
-              ) : (
-                "Analyze Conversation"
-              )}
+                </> : "Analyze Conversation"}
             </Button>
           </CardFooter>
         </Card>
 
-        {results && (
-          <div className="grid md:grid-cols-2 gap-6">
+        {results && <div className="grid md:grid-cols-2 gap-6">
             <Card className="shadow-lg border-blue-100">
               <CardHeader>
                 <CardTitle className="text-blue-800">Emotion Analysis</CardTitle>
@@ -114,18 +97,12 @@ const Index = () => {
                 <MentalHealthReport report={results.report} />
               </CardContent>
             </Card>
-          </div>
-        )}
+          </div>}
 
         <footer className="mt-10 text-center text-sm text-gray-500">
-          <p>
-            Disclaimer: This tool provides basic analysis and is not a substitute for professional mental health advice.
-            Please consult with a healthcare provider for any concerns about your mental well-being.
-          </p>
+          <p className="text-center">Disclaimer: Made By Vineet And Samarth</p>
         </footer>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
