@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -107,7 +106,6 @@ const Index = () => {
         )}
 
         <footer className="mt-10 text-center text-sm text-gray-500">
-          <p className="text-center">Disclaimer: Made By Vineet And Samarth</p>
         </footer>
       </div>
     </div>
