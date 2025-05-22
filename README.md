@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://preview--chat-whisper-soul-check.lovable.app
+**URL**: mental-health-analyzer.lovable.app
 
 ## How can I edit this code?
 
