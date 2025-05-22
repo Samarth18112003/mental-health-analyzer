@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: mental-health-analyzer.lovable.app
+**URL**: (https://lovable.dev/projects/554541e9-3aa8-4d9b-ad46-f20e73237841)
 
 ## How can I edit this code?
 
